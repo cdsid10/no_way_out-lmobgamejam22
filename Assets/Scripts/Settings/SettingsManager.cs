@@ -13,10 +13,7 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] Resolution[] resolutions;
 
     #region Unity Methods
-    void Awake()
-    {
-        SetUp();
-    }
+    void Awake() => SetUp();
     public void OnEnable()
     {
         Cursor.lockState = CursorLockMode.Confined;
