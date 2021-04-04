@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     public bool invertLook = false;
 
     public float moveSpeed = 10f;
+    public float sprintMultiplier = 2f;
     public float airMoveDivider = 2f;
     public float jumpHeight = 2.5f;
 
@@ -58,6 +59,10 @@ public class InputManager : MonoBehaviour
     {
         //Compact *if* for slower air movement
         Vector3 horVel = isGrounded ? (player.transform.right * moveInp.x + player.transform.forward * moveInp.y) * moveSpeed : (player.transform.right * moveInp.x + player.transform.forward * moveInp.y) * moveSpeed / airMoveDivider;
+        //Controls Sprint
+        bool sprinting = inputMovement.Sprint.activeControl != null ? true : false;
+        horVel = sprinting ? horVel *= sprintMultiplier : horVel;
+        //Moves the player
         playerController.Move(horVel * Time.deltaTime);
         playerController.Move(vertVel * Time.deltaTime);
         //Groundcheck and gravity calcs
