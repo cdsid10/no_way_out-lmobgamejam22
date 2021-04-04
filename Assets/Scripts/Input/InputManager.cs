@@ -121,7 +121,6 @@ public class InputManager : MonoBehaviour
         pickedObject.transform.parent = null;
         pickedObject.layer = 0;
         pickedObject = null;
-
     }
 
     void HandlePickedObject()
@@ -129,7 +128,6 @@ public class InputManager : MonoBehaviour
         Rigidbody rb = pickedObject.GetComponent<Rigidbody>();
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
-
         float distanceToPlayer = Vector3.Distance(pickedObject.transform.position, pickPosition.transform.position);
         if (distanceToPlayer >= 0.75f || xRot >= 60f) Drop();
     }
