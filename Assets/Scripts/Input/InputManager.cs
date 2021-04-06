@@ -60,7 +60,7 @@ public class InputManager : MonoBehaviour
         //Compact *if* for slower air movement
         Vector3 horVel = isGrounded ? (player.transform.right * moveInp.x + player.transform.forward * moveInp.y) * moveSpeed : (player.transform.right * moveInp.x + player.transform.forward * moveInp.y) * moveSpeed / airMoveDivider;
         //Controls Sprint
-        bool sprinting = inputMovement.Sprint.activeControl != null ? true : false;
+        bool sprinting = inputMovement.Sprint.activeControl != null;
         horVel = sprinting ? horVel *= sprintMultiplier : horVel;
         //Moves the player
         playerController.Move(horVel * Time.deltaTime);
@@ -95,37 +95,29 @@ public class InputManager : MonoBehaviour
 
     void HandleInteract()
     {
-        if (pickedObject == null)
+        Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) if (hit.collider.TryGetComponent(out IInteractable interactable)) interactable.Interact(); else return;
+    }
+
+    public void TogglePickUp(GameObject go)
+    {
+        if(pickedObject == null)
         {
-            Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
-            {
-                hit.collider.gameObject.TryGetComponent(out MultiTag mt);
-                if (mt == null) return;
-                if (mt.logicTag == "Pickable") PickUp(mt.gameObject);
-                //if (mt.logicTag == "Button") PressButton();
-            }
-        } else Drop();
-    }
-
-    void PickUp(GameObject go)
-    {
-        pickedObject = go;
-        Rigidbody rb = go.GetComponent<Rigidbody>();
-        rb.useGravity = false;
-        go.transform.parent = mainCamera.transform;
-        go.transform.localPosition = new Vector3(0, 0, mainCamera.transform.localPosition.z + interactDistance);
-        go.layer = 7;
-    }
-
-    void Drop()
-    {
-        Rigidbody rb = pickedObject.GetComponent<Rigidbody>();
-        rb.useGravity = true;
-        pickedObject.transform.parent = null;
-        pickedObject.layer = 0;
-        pickedObject = null;
+            pickedObject = go;
+            Rigidbody rb = go.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            go.transform.parent = mainCamera.transform;
+            go.transform.localPosition = new Vector3(0, 0, mainCamera.transform.localPosition.z + interactDistance);
+            go.layer = 7;
+        } 
+        else
+        {
+            Rigidbody rb = pickedObject.GetComponent<Rigidbody>();
+            rb.useGravity = true;
+            pickedObject.transform.parent = null;
+            pickedObject.layer = 0;
+            pickedObject = null;
+        }
     }
 
     void HandlePickedObject()
@@ -134,7 +126,7 @@ public class InputManager : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
         float distanceToPlayer = Vector3.Distance(pickedObject.transform.position, pickPosition.transform.position);
-        if (distanceToPlayer >= 0.75f || xRot >= 60f) Drop();
+        if (distanceToPlayer >= 0.75f || xRot >= 60f) TogglePickUp(pickedObject);
     }
 
     void ToggleCursor() => Cursor.visible = !Cursor.visible;
