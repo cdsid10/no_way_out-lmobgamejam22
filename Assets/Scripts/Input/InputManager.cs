@@ -44,9 +44,7 @@ public class InputManager : MonoBehaviour
         HandleMovement(moveInput);
         HandleLook(lookInput);
         HandleJump();
-
-        if (inputMovement.Interact.triggered) HandleInteract();
-        if (pickedObject != null) HandlePickedObject();
+        HandlePickUp();
     }
 
     void OnEnable() => inputs.Enable();
@@ -97,6 +95,13 @@ public class InputManager : MonoBehaviour
     {
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) if (hit.collider.TryGetComponent(out IInteractable interactable)) interactable.Interact(); else return;
+    }
+
+    void HandlePickUp()
+    {
+        if (inputMovement.Interact.triggered && pickedObject == null) HandleInteract();
+        else if (inputMovement.Interact.triggered && pickedObject != null) TogglePickUp(pickedObject);
+        if (pickedObject != null) HandlePickedObject();
     }
 
     public void TogglePickUp(GameObject go)
