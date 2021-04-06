@@ -93,6 +93,7 @@ public class InputManager : MonoBehaviour
 
     void HandleInteract()
     {
+        //Uses a Raycast to Interact using the interface in the hit GameObject
         Ray ray = new Ray(mainCamera.transform.position, mainCamera.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, interactDistance)) if (hit.collider.TryGetComponent(out IInteractable interactable)) interactable.Interact(); else return;
     }
@@ -105,7 +106,8 @@ public class InputManager : MonoBehaviour
     }
 
     public void TogglePickUp(GameObject go)
-    {
+    {       
+        //Toggles between picking and dropping the object.
         if(pickedObject == null)
         {
             pickedObject = go;
@@ -127,6 +129,7 @@ public class InputManager : MonoBehaviour
 
     void HandlePickedObject()
     {
+        //Updates the picked object's position and drops it if it goes beyond some tolerance.
         Rigidbody rb = pickedObject.GetComponent<Rigidbody>();
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
