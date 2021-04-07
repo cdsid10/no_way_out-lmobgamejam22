@@ -120,7 +120,7 @@ public class @Inputs : IInputActionCollection, IDisposable
                     ""id"": ""962999c0-d750-47c0-b1a4-38eb92aa91b0"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,

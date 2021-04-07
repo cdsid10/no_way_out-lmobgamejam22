@@ -47,6 +47,11 @@ public class InputManager : MonoBehaviour
         HandlePickUp();
     }
 
+    public void FixedUpdate()
+    {
+        HandleGravity();
+    }
+
     void OnEnable() => inputs.Enable();
 
     void OnDisable() => inputs.Disable();
@@ -63,6 +68,10 @@ public class InputManager : MonoBehaviour
         //Moves the player
         playerController.Move(horVel * Time.deltaTime);
         playerController.Move(vertVel * Time.deltaTime);
+    }
+
+    void HandleGravity()
+    {
         //Groundcheck and gravity calcs
         isGrounded = Physics.CheckSphere(new Vector3(player.transform.position.x, player.transform.position.y + 0.35f, player.transform.position.z), 0.4f, ~playerLayer);
         vertVel.y = isGrounded && !isJumping ? 0f : vertVel.y += gravity * Time.deltaTime;

@@ -26,8 +26,8 @@ public class RigidBodyCollisionAudio : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         UnityEngine.Profiling.Profiler.BeginSample(name + ".OnCollisionEnter",this);
-        collision.gameObject.TryGetComponent(out MultiTag mt);
-        string physicsTag = mt == null ? "NoMultiTagComponent" : mt.physicsTag;
+        collision.gameObject.TryGetComponent(out MultiTag mt);      
+        string physicsTag = mt == null ? "NoMultiTagComponent" : mt.physicsTag;      
         float magnitude = Mathf.Clamp(collision.relativeVelocity.sqrMagnitude, 0.01f, maxMagnitudeExpected);
         float volume = Mathf.Clamp(magnitude / maxMagnitudeExpected, 0.01f, 1f);
         float distance = rb.mass * 10;

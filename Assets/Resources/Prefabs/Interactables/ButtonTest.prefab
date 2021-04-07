@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7293395941447404018}
   - component: {fileID: 7293395941447404021}
   - component: {fileID: 7293395941447404020}
-  - component: {fileID: 7293395941447404016}
+  - component: {fileID: 77661076716304663}
   m_Layer: 0
   m_Name: ButtonTest
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293395941447404023}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.63, y: 1.32, z: -12.9}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7293395941447404016
+--- !u!114 &77661076716304663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df74ff18f94b3b04e815f6423be56b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactTargets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  isActive: 0
+  mode: 0
+  interactTargets: []
