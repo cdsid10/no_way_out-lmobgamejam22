@@ -117,9 +117,7 @@ MonoBehaviour:
   interactTargets: []
   isActive: 0
   buttonLight: {fileID: 6373163863819752318}
-  lightMats:
-  - {fileID: 2100000, guid: a3246d546489c0d4da33fc4da63ffb96, type: 2}
-  - {fileID: 2100000, guid: 18c6477807fa7a64ab097c08ba058612, type: 2}
+  lightMats: []
 --- !u!1 &6373163863819752256
 GameObject:
   m_ObjectHideFlags: 0

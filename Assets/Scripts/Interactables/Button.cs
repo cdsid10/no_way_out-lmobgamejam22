@@ -99,6 +99,7 @@ public class Button : MonoBehaviour, IInteractable
     void SetUp()
     {
         buttonLight = GetComponentInChildren<Light>();
+        lightMats = GetComponent<Renderer>().materials;
         HandleFX();
     }
 }

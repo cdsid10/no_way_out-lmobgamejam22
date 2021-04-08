@@ -206,8 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  lightMats: []
   interactTargets: []
   isActive: 0
   buttonLight: {fileID: 0}
-  lightMats:
-  - {fileID: 2100000, guid: 6840ba6bc188b944b8ed45725ed404d5, type: 2}

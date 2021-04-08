@@ -7,12 +7,12 @@ public class PressButton : MonoBehaviour
     [Header("Data")]
     [SerializeField] Vector3 detectionZone;
     [SerializeField] Mode mode;
-    [SerializeField] Material[] lightMats;
     [SerializeField] List<GameObject> interactTargets;
 
     [Header("Internal Data")]
     [SerializeField] bool isActive;
     [SerializeField] Light buttonLight;
+    [SerializeField] Material[] lightMats;
 
     enum Mode {Switch, Press}
 
@@ -110,6 +110,7 @@ public class PressButton : MonoBehaviour
     void SetUp()
     {
         buttonLight = GetComponentInChildren<Light>();
+        lightMats = GetComponent<Renderer>().materials;
         HandleFX();
     }
 
