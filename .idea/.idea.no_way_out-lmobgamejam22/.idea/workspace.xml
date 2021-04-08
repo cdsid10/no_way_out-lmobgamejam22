@@ -10,9 +10,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/LookTowardsCamera.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Highlight.cs" />
+      <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
+      <option value="$PROJECT_DIR$/Assets/LookTowardsCamera.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
@@ -56,6 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617830550745</updated>
       <workItem from="1617830559276" duration="1650000" />
+      <workItem from="1617915075727" duration="1985000" />
     </task>
     <servers />
   </component>
