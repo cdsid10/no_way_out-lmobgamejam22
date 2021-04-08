@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LightLamp : MonoBehaviour, IInteractable
 {
+    [Header("Data")]
+    [SerializeField] Material[] lightMats;
+
     [Header("Internal Data")]
     [SerializeField] bool isOn = true;
     [SerializeField] Light lightComp;
@@ -14,12 +17,27 @@ public class LightLamp : MonoBehaviour, IInteractable
 
     void ToggleLight()
     {
-        if (isOn) lightComp.enabled = false; else lightComp.enabled = true;
+        if (isOn)
+        {
+            for (int i = 0; i < lightMats.Length; i++)
+            {
+                lightMats[i].DisableKeyword("_EMISSION");
+            }
+            lightComp.enabled = false;
+        } else
+        {
+            for (int i = 0; i < lightMats.Length; i++)
+            {
+                lightMats[i].EnableKeyword("_EMISSION");
+            }
+            lightComp.enabled = true;
+        }
         isOn = !isOn;
     }
 
     void SetUp()
     {
-        lightComp = GetComponent<Light>();
+        lightComp = GetComponentInChildren<Light>();
+        lightMats = GetComponent<Renderer>().materials;
     }
 }

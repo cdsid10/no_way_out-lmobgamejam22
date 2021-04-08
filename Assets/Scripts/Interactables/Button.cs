@@ -6,14 +6,14 @@ public class Button : MonoBehaviour, IInteractable
 {
     [Header("Data")]
     [SerializeField] Mode mode;
+    [SerializeField] Material[] lightMats;
     [SerializeField] List<GameObject> interactTargets;
 
     [Header("Internal Data")]
     [SerializeField] bool isActive;
     [SerializeField] Light buttonLight;
-    [SerializeField] Material[] lightMats;
 
-    enum Mode { Switch, OneTime}
+    enum Mode { Switch, OneTime, Press}
 
     public void Interact() => Press();
 
@@ -49,7 +49,22 @@ public class Button : MonoBehaviour, IInteractable
                     isActive = true;
                     HandleFX();
                 }
-          
+                break;
+            case Mode.Press:
+                if (!isActive)
+                {
+                    foreach (var interactTarget in interactTargets)
+                    {
+                        if (interactTarget.TryGetComponent(out IInteractable interactable))
+                        {
+                            interactable.Interact();
+                        }
+                        else continue;
+                    }
+                    isActive = true;
+                    HandleFX();
+                    Invoke(nameof(ResetButton), 0.15f);
+                }
                 break;
             default:
                 break;
@@ -73,6 +88,12 @@ public class Button : MonoBehaviour, IInteractable
             }
             buttonLight.enabled = false;
         }
+    }
+
+    void ResetButton()
+    {
+        isActive = false;
+        HandleFX();
     }
 
     void SetUp()

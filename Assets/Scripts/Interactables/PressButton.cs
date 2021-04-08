@@ -7,18 +7,16 @@ public class PressButton : MonoBehaviour
     [Header("Data")]
     [SerializeField] Vector3 detectionZone;
     [SerializeField] Mode mode;
+    [SerializeField] Material[] lightMats;
     [SerializeField] List<GameObject> interactTargets;
 
     [Header("Internal Data")]
     [SerializeField] bool isActive;
     [SerializeField] Light buttonLight;
-    [SerializeField] Material[] lightMats;
 
     enum Mode {Switch, Press}
 
     public void Awake() => SetUp();
-
-    public void Start() => HandleFX();
 
     public void Update()
     {
@@ -41,21 +39,19 @@ public class PressButton : MonoBehaviour
     {
         if (isActive)
         {
-            buttonLight.enabled = true;
             for (int i = 0; i < lightMats.Length; i++)
             {
                 lightMats[i].EnableKeyword("_EMISSION");
             }
-            
+            buttonLight.intensity = 0.75f;
         }
         else if (!isActive)
         {
-            buttonLight.enabled = false;
             for (int i = 0; i < lightMats.Length; i++)
             {
                 lightMats[i].DisableKeyword("_EMISSION");
             }
-
+            buttonLight.intensity = 0f;
         }
     }
 
@@ -113,7 +109,8 @@ public class PressButton : MonoBehaviour
 
     void SetUp()
     {
-        buttonLight = GetComponentInChildren<Light>();       
+        buttonLight = GetComponentInChildren<Light>();
+        HandleFX();
     }
 
     public void OnDrawGizmosSelected()

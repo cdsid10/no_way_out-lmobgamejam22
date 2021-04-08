@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2216517642662267521}
   - component: {fileID: 4118067164468330059}
   - component: {fileID: 4984801485520617163}
+  - component: {fileID: 632329882626580372}
   m_Layer: 0
   m_Name: Ceiling_2.5x2.5_1
   m_TagString: Untagged
@@ -97,6 +98,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 0.1750002, z: 2.5}
   m_Center: {x: 0, y: -0.08769841, z: 0.041177213}
+--- !u!114 &632329882626580372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460843588795899806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d981fa8540007e04cbc6905e1237ab9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightMats: []
+  isOn: 1
+  lightComp: {fileID: 6779883043452308821}
 --- !u!1 &9123589488227412378
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +123,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2031619390282894731}
   - component: {fileID: 6779883043452308821}
-  - component: {fileID: 6120247353142664843}
   m_Layer: 0
   m_Name: CeilingLight
   m_TagString: Untagged
@@ -191,17 +206,3 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &6120247353142664843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123589488227412378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d981fa8540007e04cbc6905e1237ab9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOn: 1
-  lightComp: {fileID: 0}
