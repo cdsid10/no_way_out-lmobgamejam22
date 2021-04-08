@@ -5,11 +5,20 @@ using UnityEngine;
 public class PressButton : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] bool isActive;
+    [SerializeField] Vector3 detectionZone;
     [SerializeField] Mode mode;
     [SerializeField] List<GameObject> interactTargets;
-    
+
+    [Header("Internal Data")]
+    [SerializeField] bool isActive;
+    [SerializeField] Light buttonLight;
+    [SerializeField] Material[] lightMats;
+
     enum Mode {Switch, Press}
+
+    public void Awake() => SetUp();
+
+    public void Start() => HandleFX();
 
     public void Update()
     {
@@ -19,7 +28,7 @@ public class PressButton : MonoBehaviour
     bool IsPressed()
     {
         bool isPressed = false;
-        Collider[] gosInRange = Physics.OverlapBox(new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z), transform.localScale * 0.4f);
+        Collider[] gosInRange = Physics.OverlapBox(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), detectionZone*0.5f);
         for (int i = 0; i < gosInRange.Length; i++)
         {
             if (!gosInRange[i].gameObject.TryGetComponent(out MultiTag mt)) continue;
@@ -28,12 +37,34 @@ public class PressButton : MonoBehaviour
         return isPressed;
     }
 
+    void HandleFX()
+    {
+        if (isActive)
+        {
+            buttonLight.enabled = true;
+            for (int i = 0; i < lightMats.Length; i++)
+            {
+                lightMats[i].EnableKeyword("_EMISSION");
+            }
+            
+        }
+        else if (!isActive)
+        {
+            buttonLight.enabled = false;
+            for (int i = 0; i < lightMats.Length; i++)
+            {
+                lightMats[i].DisableKeyword("_EMISSION");
+            }
+
+        }
+    }
+
     void HandleButton()
     {
         switch (mode)
         {
             case Mode.Switch:
-                if (IsPressed())
+                if (IsPressed() && !isActive)
                 {
                     foreach (var interactTarget in interactTargets)
                     {
@@ -43,7 +74,8 @@ public class PressButton : MonoBehaviour
                         }
                         else continue;
                     }
-                    enabled = false;
+                    isActive = true;
+                    HandleFX();
                 }
                 break;
             case Mode.Press:
@@ -58,6 +90,7 @@ public class PressButton : MonoBehaviour
                         else continue;
                     }
                     isActive = true;
+                    HandleFX();
                 }
                 else if (!IsPressed() && isActive)
                 {
@@ -70,6 +103,7 @@ public class PressButton : MonoBehaviour
                         else continue;
                     }
                     isActive = false;
+                    HandleFX();
                 }
                 break;
             default:
@@ -77,9 +111,14 @@ public class PressButton : MonoBehaviour
         }
     }
 
-    public void OnDrawGizmos()
+    void SetUp()
+    {
+        buttonLight = GetComponentInChildren<Light>();       
+    }
+
+    public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z), transform.localScale * 0.8f);
+        Gizmos.DrawCube(new Vector3(transform.position.x, transform.position.y +0.1f, transform.position.z), detectionZone);
     }
 }
