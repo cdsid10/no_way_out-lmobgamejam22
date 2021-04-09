@@ -6,6 +6,7 @@ public class Button : MonoBehaviour, IInteractable
 {
     [Header("Data")]
     [SerializeField] Mode mode;
+    [SerializeField] bool isDeactivable;
     [SerializeField] Material[] lightMats;
     [SerializeField] List<GameObject> interactTargets;
 
@@ -42,6 +43,11 @@ public class Button : MonoBehaviour, IInteractable
                 }
                 isActive = !isActive;
                 HandleFX();
+                if (isDeactivable && !isActive)
+                {
+                    HandleFX();
+                    enabled = false;
+                }
                 break;
             case Mode.OneTime:
                 if (!isActive)
@@ -56,6 +62,11 @@ public class Button : MonoBehaviour, IInteractable
                     }
                     isActive = true;
                     HandleFX();
+                    if (isDeactivable && !isActive)
+                    {
+                        HandleFX();
+                        enabled = false;
+                    }
                 }
                 break;
             case Mode.Press:
@@ -72,6 +83,11 @@ public class Button : MonoBehaviour, IInteractable
                     isActive = true;
                     HandleFX();
                     Invoke(nameof(ResetButton), 0.15f);
+                    if (isDeactivable && !isActive)
+                    {
+                        HandleFX();
+                        enabled = false;
+                    }
                 }
                 break;
             case Mode.SetActive:
@@ -81,6 +97,11 @@ public class Button : MonoBehaviour, IInteractable
                     HandleFX();
                     interactTargets[0].SetActive(true);
                     interactTargets[1].SetActive(false);
+                    if (isDeactivable && !isActive)
+                    {
+                        HandleFX();
+                        enabled = false;
+                    }
                 }
                 break;
             default:
