@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class UiActivate : MonoBehaviour
 {
-    [SerializeField] private GameObject uiCanvas;
+    [SerializeField] private List<GameObject> uiCanvas;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, uiCanvas.transform.position);
-        uiCanvas.SetActive(distanceToPlayer <= 2.65f);
+        for (int i = 0; i < uiCanvas.Count; i++)
+        {
+            float distance = Vector3.Distance(transform.position, uiCanvas[i].transform.position);
+            uiCanvas[i].SetActive(distance <= 2.65f);
+        }
     }
 }
