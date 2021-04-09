@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
             {
                 Time.timeScale = 0;
                 pauseMenu.SetActive(true);
-                inputManager.ToggleCursor();
+                //inputManager.ToggleCursor();
             }
             else
             {

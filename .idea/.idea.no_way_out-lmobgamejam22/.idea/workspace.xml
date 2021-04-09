@@ -10,9 +10,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/LookTowardsCamera.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Highlight.cs" />
@@ -20,6 +17,7 @@
       <option value="$PROJECT_DIR$/Assets/Blur.shader" />
       <option value="$PROJECT_DIR$/Assets/LookTowardsCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
@@ -67,6 +65,7 @@
       <workItem from="1617925497961" duration="1248000" />
       <workItem from="1617940159255" duration="2839000" />
       <workItem from="1617975991200" duration="514000" />
+      <workItem from="1617980500826" duration="2067000" />
     </task>
     <servers />
   </component>
