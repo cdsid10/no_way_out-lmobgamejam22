@@ -16,10 +16,7 @@ public class InputManager : MonoBehaviour
     public float jumpHeight = 2.5f;
 
     public float gravity = -9.81f;
-    public float interactDistance = 2f;
-
-
-    [SerializeField] LayerMask playerLayer;
+    public float interactDistance = 2f;   
 
     [Header("Internal Data")] //These are internal variables that are automatically set. Useful for debug.
     [SerializeField] GameObject player;
@@ -27,6 +24,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] GameObject pickPosition;
     [SerializeField] CharacterController playerController;
     [SerializeField] Camera mainCamera;
+    [SerializeField] LayerMask ignoreLayers;
     [SerializeField] Vector2 moveInput;
     [SerializeField] Vector2 lookInput;
     [SerializeField] Vector3 vertVel = Vector3.zero;
@@ -73,7 +71,7 @@ public class InputManager : MonoBehaviour
     void HandleGravity()
     {
         //Groundcheck and gravity calcs
-        isGrounded = Physics.CheckSphere(new Vector3(player.transform.position.x, player.transform.position.y + 0.35f, player.transform.position.z), 0.4f, ~playerLayer);
+        isGrounded = Physics.CheckSphere(new Vector3(player.transform.position.x, player.transform.position.y + 0.35f, player.transform.position.z), 0.4f, ~ignoreLayers);
         vertVel.y = isGrounded && !isJumping ? 0f : vertVel.y += gravity * Time.deltaTime;
     }
 
@@ -166,6 +164,7 @@ public class InputManager : MonoBehaviour
         pickPosition = new GameObject("PickPosition");
         pickPosition.transform.parent = mainCamera.transform;
         pickPosition.transform.localPosition = new Vector3(0, 0, interactDistance);
+        ignoreLayers = (1 << LayerMask.NameToLayer("Player") | 1 << LayerMask.NameToLayer("Triggers"));
         //Cursor SetUp
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;

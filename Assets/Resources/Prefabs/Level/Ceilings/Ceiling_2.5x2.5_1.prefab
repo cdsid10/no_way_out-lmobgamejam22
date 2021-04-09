@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2460843588795899806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.25, y: 5, z: -16.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2031619390282894731}
@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d981fa8540007e04cbc6905e1237ab9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startOn: 1
   lightMats: []
   isOn: 1
   lightComp: {fileID: 6779883043452308821}
@@ -138,7 +139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9123589488227412378}
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: -0.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.307, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2985179121086776612}
@@ -156,8 +157,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.45843717, g: 0.9622642, b: 0.9120682, a: 1}
-  m_Intensity: 0.6
-  m_Range: 8
+  m_Intensity: 0.4
+  m_Range: 7
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10

@@ -76,17 +76,17 @@ public class Button : MonoBehaviour, IInteractable
         {
             for (int i = 0; i < lightMats.Length; i++)
             {
-                lightMats[i].EnableKeyword("_EMISSION");
+                lightMats[i].DisableKeyword("_EMISSION");
             }
-            buttonLight.enabled = true;
+            buttonLight.enabled = false;
         }
         else if (!isActive)
         {
             for (int i = 0; i < lightMats.Length; i++)
             {
-                lightMats[i].DisableKeyword("_EMISSION");
+                lightMats[i].EnableKeyword("_EMISSION");
             }
-            buttonLight.enabled = false;
+            buttonLight.enabled = true;
         }
     }
 

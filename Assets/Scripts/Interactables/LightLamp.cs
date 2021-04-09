@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightLamp : MonoBehaviour, IInteractable
 {
     [Header("Data")]
+    [SerializeField] bool startOn = true;
     [SerializeField] Material[] lightMats;
 
     [Header("Internal Data")]
@@ -39,5 +40,6 @@ public class LightLamp : MonoBehaviour, IInteractable
     {
         lightComp = GetComponentInChildren<Light>();
         lightMats = GetComponent<Renderer>().materials;
+        if(!startOn) ToggleLight();
     }
 }
