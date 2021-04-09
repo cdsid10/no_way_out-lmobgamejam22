@@ -16,8 +16,8 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Highlight.cs" />
-      <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
       <option value="$PROJECT_DIR$/Assets/LookTowardsCamera.cs" />
+      <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
@@ -62,6 +62,7 @@
       <updated>1617830550745</updated>
       <workItem from="1617830559276" duration="1650000" />
       <workItem from="1617915075727" duration="1985000" />
+      <workItem from="1617925497961" duration="997000" />
     </task>
     <servers />
   </component>

@@ -5,22 +5,17 @@ using UnityEngine;
 
 public class UiActivate : MonoBehaviour
 {
-    [SerializeField] private GameObject UiInstruction;
-    private BoxCollider _boxCollider;
+    [SerializeField] private GameObject uiCanvas;
     
     // Start is called before the first frame update
     void Start()
     {
-        _boxCollider = GetComponent<BoxCollider>();
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        UiInstruction.SetActive(true);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        UiInstruction.SetActive(false);
+        float distanceToPlayer = Vector3.Distance(transform.position, uiCanvas.transform.position);
+        uiCanvas.SetActive(distanceToPlayer <= 2.65f);
     }
 }
