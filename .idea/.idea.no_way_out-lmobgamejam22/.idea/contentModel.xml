@@ -62,9 +62,12 @@
           </e>
           <e p="Interactables" t="Include">
             <e p="Button.cs" t="Include" />
+            <e p="Elevator.cs" t="Include" />
             <e p="LightLamp.cs" t="Include" />
             <e p="Pickable.cs" t="Include" />
             <e p="PressButton.cs" t="Include" />
+            <e p="TextInteractable.cs" t="Include" />
+            <e p="TriggerBox.cs" t="Include" />
           </e>
           <e p="Settings" t="Include">
             <e p="SettingsManager.cs" t="Include" />

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LookTowardsCamera : MonoBehaviour
 {
+    //Link UICamera to camTransform
     public Transform camTransform;
 
     Quaternion originalRotation;
