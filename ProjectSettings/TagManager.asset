@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AudioManager
   - InputManager
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

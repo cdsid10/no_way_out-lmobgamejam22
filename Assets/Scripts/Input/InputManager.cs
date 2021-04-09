@@ -16,11 +16,11 @@ public class InputManager : MonoBehaviour
     public float jumpHeight = 2.5f;
 
     public float gravity = -9.81f;
-    public float interactDistance = 2f;   
+    public float interactDistance = 1.5f;   
 
     [Header("Internal Data")] //These are internal variables that are automatically set. Useful for debug.
     [SerializeField] GameObject player;
-    [SerializeField] GameObject pickedObject;
+    public GameObject pickedObject;
     [SerializeField] GameObject pickPosition;
     [SerializeField] CharacterController playerController;
     [SerializeField] Camera mainCamera;
@@ -144,7 +144,7 @@ public class InputManager : MonoBehaviour
         if (distanceToPlayer >= 0.75f || xRot >= 60f) TogglePickUp(pickedObject);
     }
 
-    void ToggleCursor() => Cursor.visible = !Cursor.visible;
+    public void ToggleCursor() => Cursor.visible = !Cursor.visible;
 
     void SetUp()
     {

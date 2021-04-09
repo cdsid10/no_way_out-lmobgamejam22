@@ -11,13 +11,21 @@ public class Button : MonoBehaviour, IInteractable
 
     [Header("Internal Data")]
     [SerializeField] bool isActive;
+    [SerializeField] GameObject uiCanvas, player;
+    [SerializeField] Quaternion uiOrigRot;
     [SerializeField] Light buttonLight;
+    [SerializeField] Camera mainCamera;
 
     enum Mode { Switch, OneTime, Press}
 
     public void Interact() => Press();
 
     public void Awake() => SetUp();
+
+    void Update()
+    {
+        HandleUI();
+    }
 
     void Press()
     {
@@ -90,6 +98,38 @@ public class Button : MonoBehaviour, IInteractable
         }
     }
 
+    void HandleUI()
+    {
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        switch (mode)
+        {
+            case Mode.Switch:
+                
+                uiCanvas.SetActive(distance <= 2f);
+                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+
+                break;
+            case Mode.OneTime:
+                if (!isActive)
+                {
+                    uiCanvas.SetActive(distance <= 2f);
+                    uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                }
+                if (isActive) uiCanvas.SetActive(false);
+                break;
+            case Mode.Press:
+
+                uiCanvas.SetActive(distance <= 2f);
+                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+
+                break;
+            default:
+                break;
+        }
+
+    }
+
     void ResetButton()
     {
         isActive = false;
@@ -100,6 +140,10 @@ public class Button : MonoBehaviour, IInteractable
     {
         buttonLight = GetComponentInChildren<Light>();
         lightMats = GetComponent<Renderer>().materials;
+        uiCanvas = transform.GetChild(0).gameObject;
+        mainCamera = Camera.main;
+        uiOrigRot = uiCanvas.transform.rotation;
+        player = GameObject.FindGameObjectWithTag("Player");
         HandleFX();
     }
 }
