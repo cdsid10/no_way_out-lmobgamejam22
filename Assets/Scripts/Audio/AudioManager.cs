@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     [Header("Data")]
+    [Range(0f,1f)]
+    [SerializeField] float musicVolume = 1f;
     [SerializeField] AudioMixer audioMixer;
     public AudioMixerGroup musicMixerGroup;
     public AudioMixerGroup soundMixerGroup;
@@ -67,7 +69,7 @@ public class AudioManager : MonoBehaviour
         //AudioSource SetUp
         audioSrc = GetComponent<AudioSource>();
         audioSrc.outputAudioMixerGroup = musicMixerGroup;
-        audioSrc.volume = 1;
+        audioSrc.volume = musicVolume;
         audioSrc.spatialBlend = 0;
         audioSrc.playOnAwake = playOnAwake;
         audioSrc.loop = loopTracks;

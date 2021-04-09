@@ -5,8 +5,8 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [Header("Internal Data")]
+    public bool isPaused;
     [SerializeField] GameObject pauseMenu;
-    [SerializeField] bool isPaused;
     [SerializeField] InputManager inputManager;
     [SerializeField] Inputs inputs;
     [SerializeField] Inputs.MovementActions inputMovement;
@@ -23,20 +23,25 @@ public class UIManager : MonoBehaviour
     {
         if (inputMovement.Pause.triggered)
         {
-            isPaused = !isPaused;
+            TogglePause();
+        }
+    }
 
-            if (isPaused)
-            {
-                Time.timeScale = 0;
-                pauseMenu.SetActive(true);
-                //inputManager.ToggleCursor();
-            }
-            else
-            {
-                Time.timeScale = 1;
-                pauseMenu.SetActive(false);
-                inputManager.ToggleCursor();
-            }
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+            inputManager.ToggleCursor();
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseMenu.SetActive(false);
+            inputManager.ToggleCursor();
         }
     }
 

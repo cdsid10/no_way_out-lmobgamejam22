@@ -7,6 +7,7 @@ TagManager:
   - AudioManager
   - InputManager
   - PauseMenu
+  - UIManager
   layers:
   - Default
   - TransparentFX

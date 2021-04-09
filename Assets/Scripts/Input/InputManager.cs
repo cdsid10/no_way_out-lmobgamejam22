@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -16,7 +17,13 @@ public class InputManager : MonoBehaviour
     public float jumpHeight = 2.5f;
 
     public float gravity = -9.81f;
-    public float interactDistance = 1.5f;   
+    public float interactDistance = 1.5f;
+
+    [Header("Glitch Effect Data")]
+    [SerializeField] float intensity;
+    [SerializeField] float flipIntensity;
+    [SerializeField] float colorIntensity;
+    [SerializeField] float duration;
 
     [Header("Internal Data")] //These are internal variables that are automatically set. Useful for debug.
     [SerializeField] GameObject player;
@@ -28,9 +35,12 @@ public class InputManager : MonoBehaviour
     [SerializeField] Vector2 moveInput;
     [SerializeField] Vector2 lookInput;
     [SerializeField] Vector3 vertVel = Vector3.zero;
-    [SerializeField] float xRot = 0;
+    [SerializeField] float xRot = 0, curDuration;
     [SerializeField] bool isGrounded;
     [SerializeField] bool isJumping;
+    [SerializeField] UIManager uiManager;
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] GlitchEffect glitchScript;
     [SerializeField] Inputs inputs;
     [SerializeField] Inputs.MovementActions inputMovement;
 
@@ -43,6 +53,7 @@ public class InputManager : MonoBehaviour
         HandleLook(lookInput);
         HandleJump();
         HandlePickUp();
+        HandleRestart();
     }
 
     public void FixedUpdate()
@@ -90,7 +101,7 @@ public class InputManager : MonoBehaviour
 
     void HandleJump()
     {
-        if (isGrounded && inputMovement.Jump.triggered)
+        if (isGrounded && inputMovement.Jump.triggered && !uiManager.isPaused)
         {
             isJumping = true;
             vertVel.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity); //Math function for jumping
@@ -144,23 +155,46 @@ public class InputManager : MonoBehaviour
         if (distanceToPlayer >= 0.75f || xRot >= 60f) TogglePickUp(pickedObject);
     }
 
+    void HandleRestart()
+    {
+        if (inputMovement.Restart.triggered)
+        {
+            StartCoroutine(RestartLevel());
+        }
+    }
+
+    IEnumerator RestartLevel()
+    {
+        audioManager.PlaySound(Resources.Load<AudioClip>("Audio/Sounds/Glitch01"), transform.position, 100f, true, 1, 0.8f, 1.2f, 0, 128, false);
+        while (curDuration < duration)
+        {
+            curDuration += Time.deltaTime;
+            glitchScript.intensity = intensity;
+            glitchScript.flipIntensity = flipIntensity;
+            glitchScript.colorIntensity = colorIntensity;
+            yield return null;
+        }
+        glitchScript.intensity = 0;
+        glitchScript.flipIntensity = 0;
+        glitchScript.colorIntensity = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     public void ToggleCursor() => Cursor.visible = !Cursor.visible;
 
     void SetUp()
     {
-        //Initialization
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("InputManager");
-        if (objs.Length > 1) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
         //Input Setup
         inputs = new Inputs();
         inputMovement = inputs.Movement;       
         inputMovement.Movement.performed += _ => moveInput = _.ReadValue<Vector2>();
         inputMovement.Look.performed += _ => lookInput = _.ReadValue<Vector2>();
         //Data SetUp
+        uiManager = GameObject.FindGameObjectWithTag("UIManager").GetComponent<UIManager>();
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<CharacterController>();
         mainCamera = Camera.main;
+        glitchScript = FindObjectOfType<GlitchEffect>();
         pickPosition = new GameObject("PickPosition");
         pickPosition.transform.parent = mainCamera.transform;
         pickPosition.transform.localPosition = new Vector3(0, 0, interactDistance);

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1484732313318215304}
   m_Layer: 0
   m_Name: UIManager
-  m_TagString: Untagged
+  m_TagString: UIManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ef2d45007868a418f6ac079b690ac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
+  pauseMenu: {fileID: 0}
+  inputManager: {fileID: 0}
