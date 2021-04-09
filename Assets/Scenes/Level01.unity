@@ -584,28 +584,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4764992236884911684, guid: 9da4736b95fff8244867f9aa42d4efa8, type: 3}
   m_PrefabInstance: {fileID: 1789521126}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &37986044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 758428619908841082, guid: c532bbabd8b9fa74c8b106aa98815683, type: 3}
-  m_PrefabInstance: {fileID: 1166473928}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &37986049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37986044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a854cc5b2548ce044a156c0286aba7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displacementMap: {fileID: 2800000, guid: 33caa8235943f614680947b2f3704f15, type: 3}
-  Shader: {fileID: 4800000, guid: fcc641f43517b6f40bdd0d6ea8eaf81b, type: 3}
-  intensity: 0
-  flipIntensity: 0
-  colorIntensity: 0
 --- !u!1001 &40641809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3416,10 +3394,26 @@ PrefabInstance:
       propertyPath: startOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020734, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_text
       value: easy
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontSize
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020864, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3521,10 +3515,26 @@ PrefabInstance:
       propertyPath: startOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020734, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_text
       value: Go Left.
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontSize
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020864, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6239,10 +6249,26 @@ PrefabInstance:
       propertyPath: startOn
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020734, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_text
       value: Good.
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontSize
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020864, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13516,6 +13542,22 @@ PrefabInstance:
       propertyPath: startOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020734, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontSize
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+    - target: {fileID: 5318577594309020735, guid: e3a947859706ec6448f476c1834adebe, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
     - target: {fileID: 5318577594309020864, guid: e3a947859706ec6448f476c1834adebe, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
