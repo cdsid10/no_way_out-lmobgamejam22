@@ -8,6 +8,7 @@ TagManager:
   - InputManager
   - PauseMenu
   - UIManager
+  - SettingsManager
   layers:
   - Default
   - TransparentFX
