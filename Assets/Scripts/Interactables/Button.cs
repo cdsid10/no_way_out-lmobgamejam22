@@ -6,14 +6,12 @@ public class Button : MonoBehaviour, IInteractable
 {
     [Header("Data")]
     [SerializeField] Mode mode;
-    [SerializeField] bool isDeactivable;
     [SerializeField] Material[] lightMats;
     [SerializeField] List<GameObject> interactTargets;
 
     [Header("Internal Data")]
     [SerializeField] bool isActive;
     [SerializeField] GameObject uiCanvas, player;
-    [SerializeField] Quaternion uiOrigRot;
     [SerializeField] Light buttonLight;
     [SerializeField] Camera mainCamera;
 
@@ -43,11 +41,6 @@ public class Button : MonoBehaviour, IInteractable
                 }
                 isActive = !isActive;
                 HandleFX();
-                if (isDeactivable && !isActive)
-                {
-                    HandleFX();
-                    enabled = false;
-                }
                 break;
             case Mode.OneTime:
                 if (!isActive)
@@ -62,11 +55,6 @@ public class Button : MonoBehaviour, IInteractable
                     }
                     isActive = true;
                     HandleFX();
-                    if (isDeactivable && !isActive)
-                    {
-                        HandleFX();
-                        enabled = false;
-                    }
                 }
                 break;
             case Mode.Press:
@@ -83,11 +71,6 @@ public class Button : MonoBehaviour, IInteractable
                     isActive = true;
                     HandleFX();
                     Invoke(nameof(ResetButton), 0.15f);
-                    if (isDeactivable && !isActive)
-                    {
-                        HandleFX();
-                        enabled = false;
-                    }
                 }
                 break;
             case Mode.SetActive:
@@ -97,17 +80,20 @@ public class Button : MonoBehaviour, IInteractable
                     HandleFX();
                     interactTargets[0].SetActive(true);
                     interactTargets[1].SetActive(false);
-                    if (isDeactivable && !isActive)
-                    {
-                        HandleFX();
-                        enabled = false;
-                    }
                 }
                 break;
             default:
                 break;
         }
     }
+
+    void Deactivate()
+    {
+        isActive = true;
+        HandleFX();
+        enabled = false;
+    }
+
     void HandleFX()
     {
         if (isActive)
@@ -137,27 +123,27 @@ public class Button : MonoBehaviour, IInteractable
             case Mode.Switch:
                 
                 uiCanvas.SetActive(distance <= 2f);
-                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                uiCanvas.transform.forward = new Vector3(mainCamera.transform.forward.x, mainCamera.transform.forward.y, mainCamera.transform.forward.z);
 
                 break;
             case Mode.OneTime:
                 if (!isActive)
                 {
                     uiCanvas.SetActive(distance <= 2f);
-                    uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                    uiCanvas.transform.forward = new Vector3(mainCamera.transform.forward.x, mainCamera.transform.forward.y, mainCamera.transform.forward.z);
                 }
                 if (isActive) uiCanvas.SetActive(false);
                 break;
             case Mode.Press:
 
                 uiCanvas.SetActive(distance <= 2f);
-                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                uiCanvas.transform.forward = new Vector3(mainCamera.transform.forward.x, mainCamera.transform.forward.y, mainCamera.transform.forward.z);
 
                 break;
             case Mode.SetActive:
 
                 uiCanvas.SetActive(distance <= 2f);
-                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                uiCanvas.transform.forward = new Vector3(mainCamera.transform.forward.x, mainCamera.transform.forward.y, mainCamera.transform.forward.z);
                 if (isActive) uiCanvas.SetActive(false);
                 break;
             default:
@@ -178,7 +164,6 @@ public class Button : MonoBehaviour, IInteractable
         lightMats = GetComponent<Renderer>().materials;
         uiCanvas = transform.GetChild(0).gameObject;
         mainCamera = Camera.main;
-        uiOrigRot = uiCanvas.transform.rotation;
         player = GameObject.FindGameObjectWithTag("Player");
         HandleFX();
     }

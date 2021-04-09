@@ -163,7 +163,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    IEnumerator RestartLevel()
+    public IEnumerator RestartLevel()
     {
         audioManager.PlaySound(Resources.Load<AudioClip>("Audio/Sounds/Glitch01"), transform.position, 100f, true, 1, 0.8f, 1.2f, 0, 128, false);
         while (curDuration < duration)

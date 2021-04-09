@@ -746,37 +746,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5034223252600053793}
     m_Modifications:
-    - target: {fileID: 5976453658837107249, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453658837107249, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.069
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453658837107249, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453658837107249, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.335
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453658837107249, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.0094
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453658837107250, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_Color.a
-      value: 0.39215687
-      objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188172, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_Name
       value: Interact Canvas (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188172, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_Pivot.x
@@ -815,18 +787,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -840,7 +800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -848,7 +808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalRotation.z
@@ -868,22 +828,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976453660050188173, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188174, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5976453660050188174, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
-      propertyPath: camTransform
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5976453660050188174, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5175a767c6dc6344dbe3925138e03c0d, type: 3}
 --- !u!224 &5976453659006013692 stripped
 RectTransform:

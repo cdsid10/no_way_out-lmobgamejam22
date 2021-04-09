@@ -8,7 +8,6 @@ public class Pickable : MonoBehaviour, IInteractable
     [SerializeField] InputManager inputManager;
     [SerializeField] GameObject uiCanvas, player;
     [SerializeField] Camera mainCamera;
-    [SerializeField] Quaternion uiOrigRot;
 
     void Awake() => SetUp();
 
@@ -26,7 +25,7 @@ public class Pickable : MonoBehaviour, IInteractable
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         uiCanvas.SetActive(distance <= 2f && inputManager.pickedObject == null);
-        uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+        uiCanvas.transform.forward = new Vector3(mainCamera.transform.forward.x, mainCamera.transform.forward.y, mainCamera.transform.forward.z);
 
     }
 
@@ -35,7 +34,6 @@ public class Pickable : MonoBehaviour, IInteractable
         inputManager = GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputManager>();
         uiCanvas = transform.GetChild(0).gameObject;
         mainCamera = Camera.main;
-        uiOrigRot = uiCanvas.transform.rotation;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 }

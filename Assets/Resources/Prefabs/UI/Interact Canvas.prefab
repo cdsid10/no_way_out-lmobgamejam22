@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.7183, y: -0.0032}
-  m_SizeDelta: {x: 1.5, y: 0.15}
+  m_AnchoredPosition: {x: 0.335, y: -0.0094}
+  m_SizeDelta: {x: 0.69, y: 0.069}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5976453658837107251
 CanvasRenderer:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 5976453660050188173}
   - component: {fileID: 5976453660050188160}
   - component: {fileID: 5976453660050188175}
-  - component: {fileID: 5976453660050188174}
   m_Layer: 5
   m_Name: Interact Canvas
   m_TagString: Untagged
@@ -158,16 +157,3 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &5976453660050188174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976453660050188172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2bb75a19eb62cc49bca9e8597fa9ecc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camTransform: {fileID: 0}
