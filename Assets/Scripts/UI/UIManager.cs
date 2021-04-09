@@ -36,12 +36,14 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
             inputManager.ToggleCursor();
+            inputManager.enabled = false;
         }
         else
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
-            inputManager.ToggleCursor();
+            inputManager.enabled = true;
+            inputManager.ToggleCursor();        
         }
     }
 
