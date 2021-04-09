@@ -16,7 +16,7 @@ public class Button : MonoBehaviour, IInteractable
     [SerializeField] Light buttonLight;
     [SerializeField] Camera mainCamera;
 
-    enum Mode { Switch, OneTime, Press}
+    enum Mode { Switch, OneTime, Press, SetActive}
 
     public void Interact() => Press();
 
@@ -74,6 +74,15 @@ public class Button : MonoBehaviour, IInteractable
                     Invoke(nameof(ResetButton), 0.15f);
                 }
                 break;
+            case Mode.SetActive:
+                if (!isActive)
+                {
+                    isActive = true;
+                    HandleFX();
+                    interactTargets[0].SetActive(true);
+                    interactTargets[1].SetActive(false);
+                }
+                break;
             default:
                 break;
         }
@@ -123,6 +132,12 @@ public class Button : MonoBehaviour, IInteractable
                 uiCanvas.SetActive(distance <= 2f);
                 uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
 
+                break;
+            case Mode.SetActive:
+
+                uiCanvas.SetActive(distance <= 2f);
+                uiCanvas.transform.rotation = mainCamera.transform.rotation * uiOrigRot;
+                if (isActive) uiCanvas.SetActive(false);
                 break;
             default:
                 break;

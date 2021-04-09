@@ -18,6 +18,7 @@
       <option value="$PROJECT_DIR$/Assets/LookTowardsCamera.cs" />
       <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Interactables/Button.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
