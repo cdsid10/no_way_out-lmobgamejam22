@@ -11,6 +11,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MenuLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -23,6 +24,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactables/Button.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/MenuLoader.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/MenuLoader.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
