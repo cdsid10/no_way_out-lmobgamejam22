@@ -376,11 +376,11 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 3714169850716294294}
     m_SelectOnDown: {fileID: 3714169850528172811}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -391,8 +391,8 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: b95921ec2e8cc8c418c5de85a9d18e46, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: b443128a498ef814b8eeff48ca76fb56, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: b95921ec2e8cc8c418c5de85a9d18e46, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -743,7 +743,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 3714169850716294294}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -753,9 +753,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e112b4c5a94b31b4984dd5b79ac402f9, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 2212950bbeb1e9d48b1302fe11762c2c, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: d4a551d4e7c1a154c903fae385f0588f, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 2212950bbeb1e9d48b1302fe11762c2c, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1350,7 +1350,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 3714169850060140971}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1360,9 +1360,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e112b4c5a94b31b4984dd5b79ac402f9, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1b06170cc8b2ffa4eb8ab4a7dfbb7d78, type: 3}
+    m_PressedSprite: {fileID: 3237305323705923902, guid: 2dd95978f4ca24142b967f3504e8294d, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 1b06170cc8b2ffa4eb8ab4a7dfbb7d78, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1397,7 +1397,7 @@ Animator:
   m_GameObject: {fileID: 3714169850528172814}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dcec897e3f70619498827bb67fa83753, type: 2}
+  m_Controller: {fileID: 9100000, guid: 701da4400731ed84ea3e9e4ff1336320, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1501,10 +1501,10 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 3714169850060140971}
-    m_SelectOnDown: {fileID: 3714169850528172811}
+    m_SelectOnDown: {fileID: 3714169849260830891}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1514,9 +1514,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e112b4c5a94b31b4984dd5b79ac402f9, type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: a6dc987e9bb2e7348a137d74bac7b382, type: 3}
+    m_PressedSprite: {fileID: -5403510240987523465, guid: a60c62315a955394380d9f4999ad19fe, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a6dc987e9bb2e7348a137d74bac7b382, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal

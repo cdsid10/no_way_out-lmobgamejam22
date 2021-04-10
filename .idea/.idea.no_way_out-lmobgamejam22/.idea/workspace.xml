@@ -19,6 +19,7 @@
       <option value="$PROJECT_DIR$/Assets/UiActivate.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Interactables/Button.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Settings/SettingsManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qrGyEtUx2y82kbtw43yLqp9Lme" />
@@ -69,6 +70,7 @@
       <workItem from="1617980500826" duration="2067000" />
       <workItem from="1617983787566" duration="607000" />
       <workItem from="1617991296888" duration="666000" />
+      <workItem from="1618029396868" duration="662000" />
     </task>
     <servers />
   </component>
