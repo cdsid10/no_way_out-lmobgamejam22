@@ -27,6 +27,7 @@ public class EndingManager : MonoBehaviour
         }
         else
         {
+            Cursor.visible = true;
             SceneManager.LoadScene(7);
         }
 
