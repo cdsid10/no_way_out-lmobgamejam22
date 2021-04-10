@@ -136,12 +136,12 @@ public class RigidBodyCollisionAudio : MonoBehaviour
         if (useDefaultSound && defaultSound == null)
         {
             Debug.LogError("'Use Default Sound' in '" + name + "' is true, but 'Audio/Sounds/DefaultHitSound' does not exist. Returning to Editor.", this);
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
         if (hitSoundsSize != physicsTagsSize || hitSoundsSize != pitchRangesSize || physicsTagsSize != pitchRangesSize)
         {
             Debug.LogError("Lists element count are inconsistent, (Hit Sounds: " + hitSoundsSize + ", Physics Tags: " + physicsTagsSize + ", Pitch Ranges: " + pitchRangesSize + "). Returning to Editor.", this);
-            UnityEditor.EditorApplication.isPlaying = false;
+            //UnityEditor.EditorApplication.isPlaying = false;
         }
     }
     #endregion
