@@ -9,6 +9,7 @@ TagManager:
   - PauseMenu
   - UIManager
   - SettingsManager
+  - SettingsMenu
   layers:
   - Default
   - TransparentFX

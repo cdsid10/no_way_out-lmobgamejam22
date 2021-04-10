@@ -8,23 +8,15 @@ public class SettingsManager : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] GameObject mainMenu;
+    public GameObject settingsMenu;
     [SerializeField] TMP_Dropdown resDropdown;
 
     [Header("Internal Data")]
     [SerializeField] Resolution[] resolutions;
 
     #region Unity Methods
-    void Awake() => SetUp();
-    public void OnEnable()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
-    }
-    public void OnDisable()
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
-    }
+    void Start() => SetUp();
+
     #endregion
 
     #region Internal Methods
@@ -44,7 +36,13 @@ public class SettingsManager : MonoBehaviour
     public void BackToMenu()
     {
         mainMenu.SetActive(true);
-        gameObject.SetActive(false);
+        settingsMenu.SetActive(false);
+    }
+
+    public void GoToSettings()
+    {
+        settingsMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
     public void Continue()
     {
@@ -53,7 +51,14 @@ public class SettingsManager : MonoBehaviour
 
     public void StartGame()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene(1);
+    }
+
+    public void BackToMainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void ExitGame()
@@ -63,10 +68,10 @@ public class SettingsManager : MonoBehaviour
 
     void SetUp()
     {
-        //Initialization SetUp
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("SettingsManager");
-        if (objs.Length > 1) Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
+        //Data Setup
+        if (SceneManager.GetActiveScene().buildIndex == 0) Cursor.visible = true;
+        settingsMenu = GameObject.FindGameObjectWithTag("SettingsMenu");
+        settingsMenu.SetActive(false);
 
         //Resolutions Dropdown SetUp
         resolutions = Screen.resolutions;

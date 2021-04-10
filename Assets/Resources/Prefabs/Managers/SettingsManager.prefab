@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 0}
+  settingsMenu: {fileID: 0}
   resDropdown: {fileID: 0}

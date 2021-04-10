@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public bool isPaused;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] InputManager inputManager;
+    [SerializeField] SettingsManager settingsManager;
     [SerializeField] Inputs inputs;
     [SerializeField] Inputs.MovementActions inputMovement;
 
@@ -21,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     void HandlePause()
     {
-        if (inputMovement.Pause.triggered)
+        if (inputMovement.Pause.triggered && !settingsManager.settingsMenu.activeSelf)
         {
             TogglePause();
         }
@@ -35,7 +36,7 @@ public class UIManager : MonoBehaviour
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
-            inputManager.ToggleCursor();
+            Cursor.visible = true;
             inputManager.enabled = false;
         }
         else
@@ -43,7 +44,7 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
             inputManager.enabled = true;
-            inputManager.ToggleCursor();        
+            Cursor.visible = false;
         }
     }
 
@@ -51,6 +52,7 @@ public class UIManager : MonoBehaviour
     {
         //Data SetUp
         inputManager = GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputManager>();
+        settingsManager = GameObject.FindGameObjectWithTag("SettingsManager").GetComponent<SettingsManager>();
         pauseMenu = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenu.SetActive(false);
 
