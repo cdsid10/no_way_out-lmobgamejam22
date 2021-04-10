@@ -10,6 +10,7 @@ TagManager:
   - UIManager
   - SettingsManager
   - SettingsMenu
+  - EndingManager
   layers:
   - Default
   - TransparentFX
