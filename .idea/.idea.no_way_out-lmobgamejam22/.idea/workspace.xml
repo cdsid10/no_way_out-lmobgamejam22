@@ -10,6 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Actions/InputAction.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Highlight.cs" />
@@ -70,7 +73,8 @@
       <workItem from="1617980500826" duration="2067000" />
       <workItem from="1617983787566" duration="607000" />
       <workItem from="1617991296888" duration="666000" />
-      <workItem from="1618029396868" duration="662000" />
+      <workItem from="1618029396868" duration="1857000" />
+      <workItem from="1618037844503" duration="357000" />
     </task>
     <servers />
   </component>
