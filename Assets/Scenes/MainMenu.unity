@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22380304, g: 0.24376729, b: 0.26534945, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -960,8 +960,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: N.W.O. Chamber.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
-  m_sharedMaterial: {fileID: 8520337040039019935, guid: 97b4f5830484f34409624192a747d7eb, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96dde55bbcd725a4eaea2e7b19cd8f1b, type: 2}
+  m_sharedMaterial: {fileID: 7704579599667021525, guid: 96dde55bbcd725a4eaea2e7b19cd8f1b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
